@@ -5,3 +5,14 @@ Andmebaaside haldussüsteemid - системы администрировани�
 MS SQL srv, Oracle, mariaDB/phpMyadmin, Access.
 
 -----------------------------------------------
+
+tabel / tabelid
+rida / read - строка / строки
+veerg / veerud - столбец / столбцы
+rida = kirjed - записи 
+veerg=väli - поля
+päring - запрос - QUERY
+käivita päring - запусти запрос - EXECUTE QUERY
+Värskenda - uuenda - обновить
+Kutsuta - удалить
+Loo - создать

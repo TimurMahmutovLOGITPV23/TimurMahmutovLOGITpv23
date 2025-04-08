@@ -13,9 +13,9 @@ CREATE DATABASE mahmutovLOGITpv23;
 USE mahmutovLOGITpv23;
 
 --tabeli loomine
--- identity(1,1) - ise täidab tabeli 1,2,3,...
+-- AUTO_INCREMENT(1,1) - ise täidab tabeli 1,2,3,...
 CREATE TABLE inimene(
-inimeneID int Primary Key identity(1,1),
+inimeneID int Primary Key AUTO_INCREMENT(1,1),
 nimi varchar(50) unique,
 synniaeg date,
 telefon char(12),

@@ -12,116 +12,107 @@ ___________________________________________
 CREATE DATABASE mahmutovLOGITpv23;
 USE mahmutovLOGITpv23;
 
---tabeli loomine
--- AUTO_INCREMENT(1,1) - ise täidab tabeli 1,2,3,...
+--taabeli loomine
+--auto_increment - ise täidab tabeli 1,2,3,...
 CREATE TABLE inimene(
-inimeneID int Primary Key AUTO_INCREMENT(1,1),
+inimeneID int Primary Key identity,
 nimi varchar(50) unique,
-synniaeg date,
+sunniaeg date,
 telefon char(12),
 pikkus decimal(5,2),
 opilaskodu bit
 );
 SELECT * FROM inimene;
-
---tabeli kustutamine 
-DROP table inimene;
-USE mahmutovLOGITpv23;
-
---tabeli loomine
---identity(1,1) - ise täidab tabeli 1,2,3,...
-CREATE TABLE inimene(
-inimeneID int Primary Key identity(1,1),
-nimi varchar(50) unique,
-synniaeg date,
-telefon char(12),
-pikkus decimal(5,2),
-opilaskodu bit
-);
-SELECT * FROM inimene;
-
---tabeli kustutamine 
+--tabeli kustutamine
 DROP table inimene;
 
---andnete lisamine
---DDL -data definition language
---DML -date manipulation language
-
-INSERT INTO inimene (nimi, synniaeg, telefon, pikkus, opilaskodu);
-VALUES
-('Peeter Uus', '2001-15-30', '2568952', 90.5, 0),
-('Kaarel Oja', '2000-12-30', '2568952', 90.5, 0),
-('Mati Kask', '1983-12-30', '33333', 140.5, 0),
-('Peeter Oja', '2021-12-30', '333333', 90.5, 0)
-;
-
-SELECT * FROM inimene;
---kustuta id =
-DELETE FROM inimene
-WHERE inimeneID=3;
-
-CREATE TABLE elukoht(
-elukohtID int PRIMARY KEY identity(1,1),
-elukoht varchar(50) UNIQUE,
-maakond varchar(50)
-);
-SELECT * FROM elukoht;
---andmete lisamine tabeli elukoht
-INSERT INTO elukoht(elukoht, maakond)
-VALUES ('Tallinn', 'Harjumaa'), ('Pärnu', 'Pärnumaa'), ('Tartu', 'Tartumaa');
-
---tabeli muutmine uue veergu lisamine
-ALTER TABLE inimene ADD elukohtID int;
-SELECT * from inimene;
--- foreign key lisamine
-Alter table inimene 
-ADD Constraint fk_elukoht
-FOREIGN KEY (elukohtID)
-references elukoht(elukohtID);
-
-
-SELECT * from inimene;
-SELECT * from elukoht;
+--andmete lisamine
+--DDL - data definition language
+--DML - data manipulation language
 
 INSERT INTO inimene
-(nimi, synniaeg, telefon, pikkus, opilaskodu, elukohtID)
-VALUES
-('Peeter Uus', '2001-15-30', '2568952', 90.5, 1)
+(nimi, sunniaeg, telefon, pikkus, opilaskodu)
+values
+('Peeter Uus', '2021-12-30', '9564735', 85.5, 0),
+('Mari Speek', '1980-10-20', '778795', 174.5, 0),
+('Tonu Talve', '2075-05-10', '656295', 180.5, 0),
+('Peeter Oja', '2005-11-17', '2865995', 182.5, 1)
+;
 
-SELECT inimene.nimi, inimene.synniaeg, elukoht.elukoht
-from inimene join elukoht
+select * from inimene;
+
+delete from inimene
+where inimeneID=7;
+
+--tabel elukoht
+create table elukoht(
+elukohtID int PRIMARY KEY identity(1,1),
+elukoht varchar(50) unique,
+maakond varchar(50)
+);
+
+select * from elukoht;
+--andmete lisamine tabeli elukoht
+insert into elukoht(elukoht, maakond)
+values ('Tallinn', 'Harjumaa'),
+('Tartu', 'Tartumaa'),
+('Pärnu', 'Pärnumaa')
+;
+--tabeli muutmine uue veergu lisamine
+alter table inimene add elukohtID int;
+
+select * from inimene;
+select * from elukoht;
+
+--foreign key lisamine
+alter table inimene add constraint fk_elukoht
+foreign key (elukohtID)
+references elukoht(elukohtID);
+
+INSERT INTO inimene
+(nimi, sunniaeg, telefon, pikkus, opilaskodu, elukohtID)
+values
+('Peeter Sir', '2021-12-30', '2564735', 82.5, 0, 2);
+
+select * from inimene join elukoht
 ON inimene.elukohtID=elukoht.elukohtID;
 
-SELECT i.nimi, i.synniaeg, e.elukoht 
+select i.nimi, i.sunniaeg, e.elukoht, e.maakond 
 from inimene i join elukoht e
 ON i.elukohtID=e.elukohtID;
 
-CREATE TABLE autod
-autoID int Primary Key Identity(1,1),
-autoNR varchar(50) unique,
+
+CREATE TABLE autod(
+autodID int Primary Key auto_increment(1,1),
+autoNR char(12) unique,
 mudell char(12),
-mark varchar(50,
-v_aasta int,
+mark char(12),
+v_aasta int
 );
-SELECT * From autod;
 
-INSERT INTO autod
+select * from inimene;
+select * from autod;
+
+insert into autod
 (autoNR, mudell, mark, v_aasta)
-VALUES
-('ghf245', '88', 'Audi', '2000'),
-('479hfn', '54', 'Honda', '2024')
-;
+values
+('EST111', 'Audi', 'Q7', '2016'),
+('TSE131', 'Audi', 'A8', '2007');
 
-ALTER TABLE inimene ADD autoID int;
-SELECT * From inimene;
+alter table inimene add autodID int;
 
--- FOreing key
-ALTER TABLE inimene
-ADD constraint fk_autod
-Foreign key (autoID)
-references autod(autoID);
+alter table inimene add constraint fk_autod
+foreign key (autodID)
+references autod(autodID);
 
 INSERT INTO inimene
-(nimi, synniaeg, telefon, pikkus, opilaskodu, elukohtID, autoID)
-VALUES
-('Peeter Uus', '2001-15-30', '2568952', 90.5, 0, 1, 1);
+(nimi, sunniaeg, telefon, pikkus, opilaskodu, elukohtID, autodID)
+values
+('Peeter Surr22', '2002-12-30', '5835735', 192, 0, 2, 1);
+
+select * from inimene join elukoht
+ON inimene.elukohtID=elukoht.elukohtID;
+
+select i.nimi, i.sunniaeg, a.autoNR, a.mudell, a.mark, a.v_aasta
+from inimene i join autod a
+ON i.elukohtID=a.autodID;

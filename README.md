@@ -39,3 +39,10 @@ Server Name: (localdb)\MSSQLLocalDB
 3. date, time, datetime - kuppäeva
 4. boolean, bit, bool - loogilised
 ```
+
+## Piirangud - ограничения - CONSTRAINT (5)
+1. PRIMARY KEY
+2. NOT NULL
+3. CHECK - valik
+4. UNIQUE
+5. FOREING KEY

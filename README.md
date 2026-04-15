@@ -29,3 +29,5 @@ Näited: telefoninumber, nimi, nimetus, isikukood, address
 
 1. DDL - Data definition Language
 2. DML - Data Manipulation Language
+
+Server Name: (localdb)\MSSQLLocalDB

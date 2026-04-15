@@ -13,3 +13,18 @@ Näited: telefoninumber, nimi, nimetus, isikukood, address
 4. FORGEIN KEY - võõrvälti / väline võti - вторичный ключ 
 определяет набор значения из другой таблциы
 5. CHECK - СHECK(naine, mees) - определяет наюор значений
+
+##Põhimõised
+- Andmebaasi haldussüteemid -  tarkvara, millega abil saab luua andmebaas (mariaDB - XAMPP, SQL Server)
+- Andmebaas + struktureeritud andmete kogum
+- Tabel - olem - cущности
+- Veerg - väli - поле
+- Rida - kirje - запись
+- Primaarne võti - primary key -PK- veerg, unikaalse identifkatooriga (tavaliselt nimetakse id)
+- Võõrvõti - foreign key - FK - veerg, mis loob seose teise tabeli primmarne võtmega
+
+##SQL - structured query language - struktureeritud päringu keel
+- päring - запрос
+
+1. DDL - Data definition Language
+2. DML - Data Manipulation Language

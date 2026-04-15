@@ -46,3 +46,9 @@ Server Name: (localdb)\MSSQLLocalDB
 3. CHECK - valik
 4. UNIQUE
 5. FOREING KEY
+
+## Tabelivahelised seosed
+üks-ühele (nt naine-mees)
+üks-mitmele (nt naine - lapsed)
+mitme-mitmele (õpilased-tunnid)
+<img width="523" height="276" alt="{9CF9F13D-74CF-43E6-B673-9C24E34F65BB}" src="https://github.com/user-attachments/assets/a84a9ec9-c4e9-4927-934e-b79e72723c5b" />

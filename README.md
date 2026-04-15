@@ -31,3 +31,11 @@ Näited: telefoninumber, nimi, nimetus, isikukood, address
 2. DML - Data Manipulation Language
 
 Server Name: (localdb)\MSSQLLocalDB
+
+##Andmetüübid
+```
+1. int, smallint, decimal(5,2) - numbrillised
+2. varchar(30), char(5), TEXT - tekst/sümbolised
+3. date, time, datetime - kuppäeva
+4. boolean, bit, bool - loogilised
+```

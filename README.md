@@ -25,6 +25,7 @@ Näited: telefoninumber, nimi, nimetus, isikukood, address
 
 ##SQL - structured query language - struktureeritud päringu keel
 - päring - запрос
+<img width="427" height="339" alt="image" src="https://github.com/user-attachments/assets/d055fe53-1bba-4edb-9cfc-b5f1cdfd6f96" />
 
 1. DDL - Data definition Language
 2. DML - Data Manipulation Language

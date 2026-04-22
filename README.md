@@ -52,3 +52,18 @@ Server Name: (localdb)\MSSQLLocalDB
 üks-mitmele (nt naine - lapsed)
 mitme-mitmele (õpilased-tunnid)
 <img width="523" height="276" alt="{9CF9F13D-74CF-43E6-B673-9C24E34F65BB}" src="https://github.com/user-attachments/assets/a84a9ec9-c4e9-4927-934e-b79e72723c5b" />
+
+
+## ALTER TABLE - tabeli struktuuri muutmine
+``` --tabeli struktuuri muutmine
+--1. uue veeru lisamine
+ALTER TABLE tootaja ADD testVeerg int;
+Select * from tootaja;
+--2. veeru kustutamine
+ALTER TABLE tootaja DROP COLUMN testVeerg;
+--3. andmetüübi muutmine veerus
+ALTER TABLE tootaja ALTER COLUMN testVeerg varchar(5);
+--struktuuri kontrollimiseks kasutame protseduur sp_help
+sp_help tootaja;``` 
+
+1. uue veeru lisamine

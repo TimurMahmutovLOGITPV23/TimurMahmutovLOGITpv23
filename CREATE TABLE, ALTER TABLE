@@ -1,0 +1,58 @@
+USE MahmutovBaas;
+--Category (idCategory, Category_Name)
+
+CREATE TABLE Category(
+idCategory int PRIMARY KEY identity(1,1),
+--AUTO_INCREMENT
+CategoryNimetus varchar (20));
+INSERT INTO Category
+Values('Electronics'),
+SELECT * FROM Category
+ALTER TABLE Category ADD CONSTRAINT CategoryNimetus UNIQUE (CategoryNimetus);
+
+
+--Product (idProduct, Name, idCategory, Price)
+CREATE TABLE Products(
+idProduct int PRIMARY KEY identity(1,1),
+ProductNimetus varchar (20) not null,
+idCategory int, FOREIGN KEY (idCategory) REFERENCES Category(idCategory),
+Price money);
+INSERT INTO Products
+Values('PC', 1, 1000)
+SELECT * FROM Products;
+
+--Sale (idSale, idProduct, idCustomer, Count_pr, Date_of_sale)
+CREATE TABLE Sale(
+idSale int PRIMARY KEY identity(1,1),
+idProduct int,
+idCustomer int,
+Count_pr int,
+DateOfSale date);
+Select * FROM Sale
+INSERT INTO Sale
+Values(2, 5, 5, '2025-04-13');
+DROP TABLE Sale;
+
+CREATE TABLE Customer(
+idCustomer int primary key identity(1,1),
+Name varchar(30) not null,
+Contact varchar (30))
+ALTER TABLE Sale ADD CONSTRAINT fk_sale
+FOREIGN KEY (idCustomer) REFERENCES Customer (idCustomer);
+
+INSERT INTO Category
+VALUES ('Mööbel')
+
+INSERT INTO Products
+VALUES ('TV', 1, 300), ('tool', 2, 30)
+
+INSERT INTO Customer
+VALUES ('Boris', '55668614')
+
+INSERT INTO Sale
+VALUES ()
+
+SELECT * FROM Products
+SELECT * FROM Customer
+SELECT * FROM Category
+Select * FROM Sale

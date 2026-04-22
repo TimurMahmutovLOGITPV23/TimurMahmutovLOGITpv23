@@ -64,6 +64,7 @@ ALTER TABLE tootaja DROP COLUMN testVeerg;
 --3. andmetüübi muutmine veerus
 ALTER TABLE tootaja ALTER COLUMN testVeerg varchar(5);
 --struktuuri kontrollimiseks kasutame protseduur sp_help
-sp_help tootaja;``` 
+sp_help tootaja;
+``` 
 
 1. uue veeru lisamine
